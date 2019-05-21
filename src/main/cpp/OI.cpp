@@ -9,6 +9,17 @@
 
 #include <frc/WPILib.h>
 
-OI::OI() {
+OI::OI() : gamepad(0) {
   // Process operator interface input here.
+  
 }
+
+double OI::GetGamepadLeftStickY()
+  {
+    gamepad.GetY(GenericHID::JoystickHand::kLeftHand);
+  }
+
+  double OI::GetGamepadRightStickY()
+  {
+    gamepad.GetY(GenericHID::JoystickHand::kRightHand);
+  }

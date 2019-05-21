@@ -5,19 +5,29 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
-#include <frc/WPILib.h>
-#include <frc/Joystick.h>
-#include <frc/XboxController.h>
+#ifndef COMMAND_BASE_H
+#define COMMAND_BASE_H
 
+#include <memory>
+#include <string>
+
+#include <frc/Commands/Command.h>
 using namespace frc;
 
-class OI {
- private:
-  XboxController gamepad;
+#include "OI.h"
 
+#include <DrivetrainSubsystem.h>
+
+class CommandBase : public frc::Command {
  public:
-  OI();
-  double GetGamepadLeftStickY();
-  double GetGamepadRightStickY();
+  CommandBase(const std::string& name);
+	CommandBase() = default;
+
+	static void init();
+
+	// Create a single static instance of all of your subsystems
+	static std::unique_ptr<DrivetrainSubsystem> drivetrain;
+	static std::unique_ptr<OI> oi;
+
 };
+#endif

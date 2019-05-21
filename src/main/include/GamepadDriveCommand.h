@@ -6,18 +6,18 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <frc/WPILib.h>
-#include <frc/Joystick.h>
-#include <frc/XboxController.h>
+
+#include <CommandBase.h>
+#include "OI.h"
 
 using namespace frc;
 
-class OI {
- private:
-  XboxController gamepad;
-
+class GamepadDriveCommand : CommandBase {
  public:
-  OI();
-  double GetGamepadLeftStickY();
-  double GetGamepadRightStickY();
+  GamepadDriveCommand();
+  void Initialize() override;
+  void Execute() override;
+  bool IsFinished() override;
+  void End() override;
+  void Interrupted() override;
 };

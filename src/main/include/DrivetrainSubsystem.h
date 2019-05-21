@@ -6,18 +6,21 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <frc/WPILib.h>
-#include <frc/Joystick.h>
-#include <frc/XboxController.h>
+
+#include <frc/commands/Subsystem.h>
+#include <frc/Talon.h>
 
 using namespace frc;
 
-class OI {
+class DrivetrainSubsystem : public frc::Subsystem {
  private:
-  XboxController gamepad;
+  // It's desirable that everything possible under private except
+  // for methods that implement subsystem capabilities
+  Talon * leftDrive;
+  Talon * rightDrive;
 
  public:
-  OI();
-  double GetGamepadLeftStickY();
-  double GetGamepadRightStickY();
+  DrivetrainSubsystem();
+  void InitDefaultCommand() override;
+  void Drive();
 };
