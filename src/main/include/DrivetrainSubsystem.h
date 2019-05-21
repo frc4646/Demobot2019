@@ -22,5 +22,5 @@ class DrivetrainSubsystem : public frc::Subsystem {
  public:
   DrivetrainSubsystem();
   void InitDefaultCommand() override;
-  void Drive();
+  void Drive(double leftSpeed, double rightSpeed);
 };

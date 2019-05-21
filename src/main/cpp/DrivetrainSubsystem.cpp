@@ -6,6 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 #include "DrivetrainSubsystem.h"
+#include "GamepadDriveCommand.h"
+#include "CommandBase.h"
 
 DrivetrainSubsystem::DrivetrainSubsystem() : Subsystem("DrivetrainSubsystem") {
   leftDrive = new Talon(0);

@@ -12,7 +12,7 @@
 
 using namespace frc;
 
-class GamepadDriveCommand : CommandBase {
+class GamepadDriveCommand : public CommandBase {
  public:
   GamepadDriveCommand();
   void Initialize() override;
