@@ -15,18 +15,24 @@ GamepadDriveCommand::GamepadDriveCommand() {
 
 // Called just before this Command runs the first time
 void GamepadDriveCommand::Initialize() {
-  drivetrain->Drive(oi->GetGamepadLeftStickY(), oi->GetGamepadRightStickY());
+  drivetrain->Drive(0,0);
 }
 
 // Called repeatedly when this Command is scheduled to run
-void GamepadDriveCommand::Execute() {}
+void GamepadDriveCommand::Execute() {
+  drivetrain->Drive(oi->GetGamepadLeftStickY(), oi->GetGamepadRightStickY());
+}
 
 // Make this return true when this Command no longer needs to run execute()
 bool GamepadDriveCommand::IsFinished() { return false; }
 
 // Called once after isFinished returns true
-void GamepadDriveCommand::End() {}
+void GamepadDriveCommand::End() {
+  drivetrain->Drive(0,0);
+}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void GamepadDriveCommand::Interrupted() {}
+void GamepadDriveCommand::Interrupted() {
+  drivetrain->Drive(0,0);
+}
