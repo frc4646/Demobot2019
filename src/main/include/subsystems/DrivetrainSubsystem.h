@@ -5,29 +5,24 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#ifndef COMMAND_BASE_H
-#define COMMAND_BASE_H
+#pragma once
 
-#include <memory>
-#include <string>
+#include <frc/commands/Subsystem.h>
+#include <ctre/Phoenix.h>
 
-#include <frc/Commands/Command.h>
 using namespace frc;
 
-#include "OI.h"
+class DrivetrainSubsystem : public frc::Subsystem {
+ private:
+  // It's desirable that everything possible under private except
+  // for methods that implement subsystem capabilities
+  WPI_TalonSRX * frontLeftDrive;
+  WPI_TalonSRX * frontRightDrive;
+  WPI_VictorSPX * backLeftDrive;
+  WPI_VictorSPX * backRightDrive;
 
-#include <subsystems/DrivetrainSubsystem.h>
-
-class CommandBase : public frc::Command {
  public:
-  CommandBase(const std::string& name);
-	CommandBase() = default;
-
-	static void init();
-
-	// Create a single static instance of all of your subsystems
-	static std::unique_ptr<DrivetrainSubsystem> drivetrain;
-	static std::unique_ptr<OI> oi;
-
+  DrivetrainSubsystem();
+  void InitDefaultCommand() override;
+  void Drive(double leftSpeed, double rightSpeed);
 };
-#endif

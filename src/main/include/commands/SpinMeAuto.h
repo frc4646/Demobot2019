@@ -7,20 +7,14 @@
 
 #pragma once
 
-#include <frc/commands/Subsystem.h>
-#include <frc/Talon.h>
+#include <CommandBase.h>
 
-using namespace frc;
-
-class DrivetrainSubsystem : public frc::Subsystem {
- private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
-  Talon * leftDrive;
-  Talon * rightDrive;
-
+class SpinMeAuto : public CommandBase {
  public:
-  DrivetrainSubsystem();
-  void InitDefaultCommand() override;
-  void Drive(double leftSpeed, double rightSpeed);
+  SpinMeAuto();
+  void Initialize() override;
+  void Execute() override;
+  bool IsFinished() override;
+  void End() override;
+  void Interrupted() override;
 };

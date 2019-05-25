@@ -5,34 +5,34 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "GamepadDriveCommand.h"
+#include "commands/SpinMeAuto.h"
 
-GamepadDriveCommand::GamepadDriveCommand() {
+SpinMeAuto::SpinMeAuto() {
   // Use Requires() here to declare subsystem dependencies
   // eg. Requires(Robot::chassis.get());
   Requires((frc::Subsystem*) drivetrain.get());
 }
 
 // Called just before this Command runs the first time
-void GamepadDriveCommand::Initialize() {
+void SpinMeAuto::Initialize() {
   drivetrain->Drive(0,0);
 }
 
 // Called repeatedly when this Command is scheduled to run
-void GamepadDriveCommand::Execute() {
-  drivetrain->Drive(oi->GetGamepadLeftStickY(), oi->GetGamepadRightStickY());
+void SpinMeAuto::Execute() {
+  drivetrain->Drive(-0.5f, 0.5f);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool GamepadDriveCommand::IsFinished() { return false; }
+bool SpinMeAuto::IsFinished() { return false; }
 
 // Called once after isFinished returns true
-void GamepadDriveCommand::End() {
+void SpinMeAuto::End() {
   drivetrain->Drive(0,0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void GamepadDriveCommand::Interrupted() {
+void SpinMeAuto::Interrupted() {
   drivetrain->Drive(0,0);
 }

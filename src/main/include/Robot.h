@@ -12,8 +12,8 @@
 #include <frc/smartdashboard/SendableChooser.h>
 
 #include "OI.h"
-#include "DrivetrainSubsystem.h"
-#include "GamepadDriveCommand.h"
+#include "subsystems/DrivetrainSubsystem.h"
+#include "commands/GamepadDriveCommand.h"
 
 class Robot : public frc::TimedRobot {
  public:

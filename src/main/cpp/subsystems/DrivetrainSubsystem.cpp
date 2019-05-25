@@ -5,15 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "DrivetrainSubsystem.h"
-#include "GamepadDriveCommand.h"
+#include "subsystems/DrivetrainSubsystem.h"
+#include "commands/GamepadDriveCommand.h"
 #include "CommandBase.h"
 
 DrivetrainSubsystem::DrivetrainSubsystem() : Subsystem("DrivetrainSubsystem") {
-  leftDrive = new Talon(0);
-  rightDrive = new Talon(1);
+  frontLeftDrive = new WPI_TalonSRX(0);
+  frontRightDrive = new WPI_TalonSRX(1);
+  backLeftDrive = new WPI_VictorSPX(2);
+  backRightDrive = new WPI_VictorSPX(3);
 
-  leftDrive->SetInverted(true);
+  frontLeftDrive->SetInverted(true);
+  backLeftDrive->SetInverted(true);
 }
 
 void DrivetrainSubsystem::InitDefaultCommand() {
@@ -27,6 +30,8 @@ void DrivetrainSubsystem::InitDefaultCommand() {
 
 void DrivetrainSubsystem::Drive(double leftSpeed, double rightSpeed)
 {
-  leftDrive->Set(leftSpeed);
-  rightDrive->Set(rightSpeed);
+  frontLeftDrive->Set(leftSpeed);
+  frontRightDrive->Set(rightSpeed);
+  backLeftDrive->Set(leftSpeed);
+  backRightDrive->Set(rightSpeed);
 }
