@@ -10,10 +10,10 @@
 #include "CommandBase.h"
 
 DrivetrainSubsystem::DrivetrainSubsystem() : Subsystem("DrivetrainSubsystem") {
-  frontLeftDrive = new WPI_TalonSRX(0);
-  frontRightDrive = new WPI_TalonSRX(1);
-  backLeftDrive = new WPI_VictorSPX(2);
-  backRightDrive = new WPI_VictorSPX(3);
+  frontLeftDrive = new WPI_VictorSPX(3);
+  frontRightDrive = new WPI_TalonSRX(2);
+  backLeftDrive = new WPI_TalonSRX(1);
+  backRightDrive = new WPI_VictorSPX(0);
 
   frontLeftDrive->SetInverted(true);
   backLeftDrive->SetInverted(true);

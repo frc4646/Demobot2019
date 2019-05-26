@@ -8,6 +8,8 @@
 #include "OI.h"
 
 #include <frc/WPILib.h>
+#include <stdio.h>
+#include <iostream>
 
 OI::OI() : gamepad(0) {
   // Process operator interface input here.
@@ -16,10 +18,12 @@ OI::OI() : gamepad(0) {
 
 double OI::GetGamepadLeftStickY()
   {
-    gamepad.GetY(GenericHID::JoystickHand::kLeftHand);
+    //printf("calling left stick");
+    return gamepad.GetRawAxis(1);
   }
 
-  double OI::GetGamepadRightStickY()
+double OI::GetGamepadRightStickY()
   {
-    gamepad.GetY(GenericHID::JoystickHand::kRightHand);
+    //printf("calling right stick");
+    return gamepad.GetRawAxis(5);
   }

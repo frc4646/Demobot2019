@@ -9,6 +9,7 @@
 
 #include <frc/commands/Scheduler.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <stdio.h>
 
 //ExampleSubsystem Robot::m_subsystem;
 OI Robot::m_oi;
@@ -16,6 +17,7 @@ OI Robot::m_oi;
 void Robot::RobotInit() {
   //m_chooser.SetDefaultOption("Default Auto", &m_defaultAuto);
   //m_chooser.AddOption("My Auto", &m_myAuto);
+  CommandBase::init();
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 }
 
@@ -78,7 +80,9 @@ void Robot::TeleopInit() {
   }
 }
 
-void Robot::TeleopPeriodic() { frc::Scheduler::GetInstance()->Run(); }
+void Robot::TeleopPeriodic() { 
+  printf("teleop periodic");
+  frc::Scheduler::GetInstance()->Run(); }
 
 void Robot::TestPeriodic() {}
 

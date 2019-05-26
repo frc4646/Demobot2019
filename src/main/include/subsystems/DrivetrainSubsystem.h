@@ -16,9 +16,9 @@ class DrivetrainSubsystem : public frc::Subsystem {
  private:
   // It's desirable that everything possible under private except
   // for methods that implement subsystem capabilities
-  WPI_TalonSRX * frontLeftDrive;
+  WPI_VictorSPX * frontLeftDrive;
   WPI_TalonSRX * frontRightDrive;
-  WPI_VictorSPX * backLeftDrive;
+  WPI_TalonSRX * backLeftDrive;
   WPI_VictorSPX * backRightDrive;
 
  public:

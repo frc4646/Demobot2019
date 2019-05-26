@@ -14,6 +14,7 @@
 #include "OI.h"
 #include "subsystems/DrivetrainSubsystem.h"
 #include "commands/GamepadDriveCommand.h"
+#include "CommandBase.h"
 
 class Robot : public frc::TimedRobot {
  public:

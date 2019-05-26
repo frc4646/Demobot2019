@@ -14,7 +14,7 @@ using namespace frc;
 
 class OI {
  private:
-  XboxController gamepad;
+  Joystick gamepad;
 
  public:
   OI();
