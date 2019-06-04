@@ -6,20 +6,17 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <frc/WPILib.h>
-#include <frc/Joystick.h>
-#include <frc/XboxController.h>
 
-using namespace frc;
+#include <frc/Commands/Command.h>
+#include <CommandBase.h>
 
-class OI {
- private:
-  Joystick gamepad;
-
- public:
-  OI();
-  double GetGamepadLeftStickY();
-  double GetGamepadRightStickY();
-  double GetGamepadLeftTrigger();
-  double GetGamepadRightTrigger();
+class FlagWaveTeleop : public CommandBase {
+public:
+	FlagWaveTeleop();
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };
+

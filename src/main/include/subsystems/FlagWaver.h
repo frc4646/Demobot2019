@@ -6,20 +6,21 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+
+#include <frc/Commands/Subsystem.h>
+
 #include <frc/WPILib.h>
-#include <frc/Joystick.h>
-#include <frc/XboxController.h>
-
+#include <frc/Spark.h>
 using namespace frc;
+class FlagWaver : public frc::Subsystem {
+private:
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+	Spark flagMotor;
 
-class OI {
- private:
-  Joystick gamepad;
-
- public:
-  OI();
-  double GetGamepadLeftStickY();
-  double GetGamepadRightStickY();
-  double GetGamepadLeftTrigger();
-  double GetGamepadRightTrigger();
+public:
+	FlagWaver();
+	void InitDefaultCommand() override;
+	void SetMotorSpeed(double speed);
 };
+

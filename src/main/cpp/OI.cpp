@@ -23,7 +23,17 @@ double OI::GetGamepadLeftStickY()
   }
 
 double OI::GetGamepadRightStickY()
-  {
+{
     //printf("calling right stick");
     return gamepad.GetRawAxis(5);
-  }
+}
+
+double OI::GetGamepadLeftTrigger()
+{
+  return gamepad.GetRawAxis(2);
+}
+
+double OI::GetGamepadRightTrigger()
+{
+  return gamepad.GetRawAxis(3);
+}

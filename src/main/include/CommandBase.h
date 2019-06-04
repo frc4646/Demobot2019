@@ -17,6 +17,7 @@ using namespace frc;
 #include "OI.h"
 
 #include <subsystems/DrivetrainSubsystem.h>
+#include <subsystems/FlagWaver.h>
 
 class CommandBase : public frc::Command {
  public:
@@ -27,6 +28,7 @@ class CommandBase : public frc::Command {
 
 	// Create a single static instance of all of your subsystems
 	static std::unique_ptr<DrivetrainSubsystem> drivetrain;
+	static std::unique_ptr<FlagWaver> flagwaver;
 	static std::unique_ptr<OI> oi;
 
 };
