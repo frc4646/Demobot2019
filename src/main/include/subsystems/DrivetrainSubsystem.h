@@ -22,6 +22,7 @@ class DrivetrainSubsystem : public frc::Subsystem {
   WPI_VictorSPX * backRightDrive;
 
  public:
+  
   DrivetrainSubsystem();
   void InitDefaultCommand() override;
   void Drive(double leftSpeed, double rightSpeed);

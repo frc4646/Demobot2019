@@ -37,3 +37,7 @@ double OI::GetGamepadRightTrigger()
 {
   return gamepad.GetRawAxis(3);
 }
+//double OI::GetGamepadRightTrigger()
+//{
+  //return gamepad.GetButton(0)
+//}

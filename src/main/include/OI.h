@@ -22,4 +22,5 @@ class OI {
   double GetGamepadRightStickY();
   double GetGamepadLeftTrigger();
   double GetGamepadRightTrigger();
+ // double GetGamepadRightButten();
 };
