@@ -20,7 +20,7 @@ void FlagWaveTeleop::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void FlagWaveTeleop::Execute() {
-	flagwaver->SetMotorSpeed(oi->GetGamepadLeftStickY());
+	flagwaver->SetMotorSpeed(oi->GetGamepadLeftTrigger());
 }
 
 // Make this return true when this Command no longer needs to run execute()
